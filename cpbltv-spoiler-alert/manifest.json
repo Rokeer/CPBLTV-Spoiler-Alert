@@ -7,7 +7,6 @@
  
   "content_scripts": [{
     "css": ["styles.css"],
-    "js": ["assign_ids.js"],
     "matches": ["https://www.cpbltv.com/lists.php*"]
   }]
 }
