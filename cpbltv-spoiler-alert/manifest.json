@@ -13,13 +13,7 @@
     "activeTab"
   ],
   "browser_action": {
-  	"default_title": "Set this page's color.",
-    "default_icon" : "temp.png",
+  	"default_title": "Toggle on/off.",
     "default_popup" : "popup.html"
-  },
-  "icons": {
-    "16": "temp.png",
-    "48": "temp.png",
-    "128": "temp.png"
   }
 }
