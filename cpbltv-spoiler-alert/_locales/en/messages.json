@@ -1,4 +1,7 @@
 {
+  "description": {
+    "message": "Hide game results on the CPBLTV website."
+  },
   "mode_select": {
     "message": "Show / Hide scores on CPBLTV？"
   },
@@ -18,7 +21,7 @@
     "message": "If you need our help, please <a href=\"https://github.com/Rokeer/CPBLTV-Spoiler-Alert\" target=\"_blank\">contact us</a>."
   },
   "rating": {
-    "message": "If you like this extension, please help us to <a href=\"https://chrome.google.com/webstore/detail/unblock-youku/pdhpgkghaoijajgocpbipdcccklmlohl/reviews\" target=\"_blank\">rate it</a>."
+    "message": "If you like this extension, please help us to <a href=\"https://cpbltvext.tasria.com\" target=\"_blank\">rate it</a>."
   },
   "support_title": {
     "message": "Ad"

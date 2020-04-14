@@ -1,4 +1,7 @@
 {
+  "description": {
+    "message": "隐藏CPBLTV录播页面中的比赛分数，以防剧透！"
+  },
   "mode_select": {
     "message": "是否隐藏CPBLTV录播页面中的比赛分数？"
   },
@@ -18,7 +21,7 @@
     "message": "如果你需要我们的帮助，请通过Github<a href=\"https://github.com/Rokeer/CPBLTV-Spoiler-Alert\" target=\"_blank\">联系我们</a>。"
   },
   "rating": {
-    "message": "如果你觉得这个插件很有用，欢迎<a href=\"https://chrome.google.com/webstore/detail/unblock-youku/pdhpgkghaoijajgocpbipdcccklmlohl/reviews\" target=\"_blank\">给我们打分</a>。"
+    "message": "如果你觉得这个插件很有用，欢迎<a href=\"https://cpbltvext.tasria.com\" target=\"_blank\">给我们打分</a>。"
   },
   "support_title": {
     "message": "广告时间"
