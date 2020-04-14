@@ -1,0 +1,38 @@
+{
+  "description": {
+    "message": "隐藏CPBLTV录播页面中的比赛分数，以防剧透！"
+  },
+  "mode_select": {
+    "message": "是否隐藏CPBLTV录播页面中的比赛分数？"
+  },
+  "mode_hide": {
+    "message": "隐藏"
+  },
+  "mode_hide_desc": {
+    "message": "隐藏所有比赛分数，可手动显示比分。"
+  },
+  "mode_show": {
+    "message": "显示"
+  },
+  "mode_show_desc": {
+    "message": "显示所有比分，相当于停用此插件。"
+  },
+  "faq": {
+    "message": "如果你需要我们的帮助，请通过Github<a href=\"https://github.com/Rokeer/CPBLTV-Spoiler-Alert\" target=\"_blank\">联系我们</a>。"
+  },
+  "rating": {
+    "message": "如果你觉得这个插件很有用，欢迎<a href=\"https://cpbltvext.tasria.com\" target=\"_blank\">给我们打分</a>。"
+  },
+  "support_title": {
+    "message": "广告时间"
+  },
+  "support_message1": {
+    "message": "欢迎收听由本插件作者主持的Podcast电台！"
+  },
+  "support_message2": {
+    "message": "与梦见星空与海浪的你 分享我们心中的故事"
+  },
+  "support_button": {
+    "message": "<i class=\"fas fa-microphone-alt\"></i> 点此收听踏浪寻星广播电台"
+  }
+}

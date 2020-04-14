@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Popup Page for Unblock Youku</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.5.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome-5.13.0.min.css">
+    <link rel="stylesheet" type="text/css" href="css/solid-5.13.0.min.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css" />
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-3.3.5.min.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body>
+    <div id="wrapper" class="container-fluid">
+        <div id="setting">
+            <div>
+                <div id="mode_select"><strong></strong></div>
+                <div class="text-center">
+                    <div class="btn-group" data-toggle="buttons" id="buttons">
+                        <label class="btn btn-default" id="hide">
+                            <input type="radio" name="options" id="input_hide"><span class="mode_hide"></span>
+                        </label>
+                        <label class="btn btn-default" id="show">
+                            <input type="radio" name="options" id="input_show"><span class="mode_show"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="setting_description">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <td class="text-center"><span class="mode_hide"></span></td>
+                            <td><span class="mode_hide_desc"></span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center"><span class="mode_show"></span></td>
+                            <td><span class="mode_show_desc"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!--<div class="text_block" id="help_text"></div>-->
+            </div>
+            <div class="text_block" id="faq"></div>
+            <div class="text_block" id="rating"></div>
+        </div>  <!-- setting -->
+        <div id="support">
+            <div><strong></strong>  <span class="label label-success">NEW</span></div>
+            <div class="text-center">
+                <p id="support_message1"></p>
+                <p id="support_message2"></p>
+                <a href="https://tasria.com" target="_blank" id="support_link"><button type="button" class="btn btn-primary" id="support_button"></button></a>
+            </div>
+        </div>
+        <div id="version" class="text-muted"><small></small></div>
+    </div>  <!-- wrapper -->
+</body>
+</html>
+

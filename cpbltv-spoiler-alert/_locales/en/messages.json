@@ -1,0 +1,38 @@
+{
+  "description": {
+    "message": "Hide game results on the CPBLTV website."
+  },
+  "mode_select": {
+    "message": "Show / Hide scores on CPBLTV？"
+  },
+  "mode_hide": {
+    "message": "Hide"
+  },
+  "mode_hide_desc": {
+    "message": "Hide all game scores."
+  },
+  "mode_show": {
+    "message": "Show"
+  },
+  "mode_show_desc": {
+    "message": "Show all game scores."
+  },
+  "faq": {
+    "message": "If you need our help, please <a href=\"https://github.com/Rokeer/CPBLTV-Spoiler-Alert\" target=\"_blank\">contact us</a>."
+  },
+  "rating": {
+    "message": "If you like this extension, please help us to <a href=\"https://cpbltvext.tasria.com\" target=\"_blank\">rate it</a>."
+  },
+  "support_title": {
+    "message": "Ad"
+  },
+  "support_message1": {
+    "message": "Welcome to the TasRadio!"
+  },
+  "support_message2": {
+    "message": "A Podcast hosted by the author of this extension!"
+  },
+  "support_button": {
+    "message": "<i class=\"fas fa-microphone-alt\"></i> Listen to the TasRadio"
+  }
+}

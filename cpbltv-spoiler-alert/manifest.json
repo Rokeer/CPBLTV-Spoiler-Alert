@@ -2,12 +2,31 @@
   "manifest_version": 2,
  
   "name": "CPBLTV Spoiler Alert",
-  "version": "0.0.1",
-  "description": "Hide game results on the CPBLTV website.",
- 
+  "version": "1.0.0",
+  "description": "__MSG_description__",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": [
+      "config.js",
+      "storage.js"
+    ]
+  },
   "content_scripts": [{
     "css": ["styles.css"],
-    "js": ["assign_ids.js"],
     "matches": ["https://www.cpbltv.com/lists.php*"]
-  }]
+  }],
+  "permissions": [
+    "storage",
+    "tabs",
+    "https://www.cpbltv.com/lists.php"
+  ],
+  "browser_action": {
+    "default_title": "CPBLTV Spoiler Alert v1.0.0",
+    "default_popup" : "popup.html"
+  },
+  "default_locale": "zh_TW"
 }
