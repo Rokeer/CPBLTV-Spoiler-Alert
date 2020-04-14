@@ -12,8 +12,10 @@ window.onload=function(){
 		var row = tbl.rows[i];
 		if (i == 0) {
 			var th = document.createElement('th');
-			th.innerText = "显示/隐藏分数";
+			th.innerHTML = "显示/隐藏分数<br><label class=\"switch\"><input id=\"switch_all\" type=\"checkbox\"><span class=\"slider round\"></span></label>";
 			row.appendChild(th);
+			var toggle = document.getElementById("switch_all");
+			toggle.onclick = function(){toggleAll()};
 		} else {
 			createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), i-1, 'stadium');
 		}
@@ -25,6 +27,20 @@ function createCell(cell, id, style) {
 	cell.innerHTML = "<label class=\"switch\"><input id=\"switch_" + id + "\" type=\"checkbox\"><span class=\"slider round\"></span></label>";
 	var toggle = document.getElementById("switch_" + id);
 	toggle.onclick = function(){toggleSwitch(id)};
+}
+
+function toggleAll() {
+	var scores = document.getElementsByClassName("score");
+	for (var i = 0; i < scores.length; i++) {
+		var score = scores.item(i);
+		if (document.getElementById("switch_all").checked) {
+			score.setAttribute("style", "visibility: visible;");
+			document.getElementById("switch_" + i).checked = true;
+		} else {
+			score.setAttribute("style", "visibility: hidden;");
+			document.getElementById("switch_" + i).checked = false;
+		}
+	}
 }
 
 function toggleSwitch(id) {

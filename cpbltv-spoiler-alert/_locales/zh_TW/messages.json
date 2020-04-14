@@ -1,0 +1,35 @@
+{
+  "mode_select": {
+    "message": "是否隱藏CPBLTV錄播頁面中的比賽分數？"
+  },
+  "mode_hide": {
+    "message": "隱藏"
+  },
+  "mode_hide_desc": {
+    "message": "隱藏所有比賽分數，可手動顯示比分。"
+  },
+  "mode_show": {
+    "message": "顯示"
+  },
+  "mode_show_desc": {
+    "message": "顯示所有比分，相當於停用此插件。"
+  },
+  "faq": {
+    "message": "如果你需要我們的幫助，請通過Github<a href=\"https://github.com/Rokeer/CPBLTV-Spoiler-Alert\" target=\"_blank\">聯繫我們</a>。"
+  },
+  "rating": {
+    "message": "如果你覺得這個插件很有用，歡迎<a href=\"https://chrome.google.com/webstore/detail/unblock-youku/pdhpgkghaoijajgocpbipdcccklmlohl/reviews\" target=\"_blank\">給我們打分</a>。"
+  },
+  "support_title": {
+    "message": "廣告時間"
+  },
+  "support_message1": {
+    "message": "歡迎收聽由本插件作者主持的Podcast電台！"
+  },
+  "support_message2": {
+    "message": "與夢見星空與海浪的你 分享我們心中的故事"
+  },
+  "support_button": {
+    "message": "<i class=\"fas fa-microphone-alt\"></i> 點此收聽踏浪尋星廣播電台"
+  }
+}
