@@ -75,7 +75,7 @@ function translate_en() {
 
 	day_ori_texts = [
 		"熱身賽",
-		"例行赛",
+		"例行賽",
 		"日",
 		"一",
 		"二",
