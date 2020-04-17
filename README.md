@@ -3,7 +3,13 @@
 
 在中华职棒CPBL的官方网站的录播页面中，会剧透比赛结果，这对没有时间看直播，而只能看录播的人，实在是一种苦恼。于是我做了一个Chrome插件，用来屏蔽比赛分数。
 
+插件下载，请访问：https://chrome.google.com/webstore/detail/cpbltv-spoiler-alert/jggcinndobcmjfgmifgohohpiiogokkp
+
 ## Release Note:
+
+### v1.1.0 04/16/2020
+
+部分翻译了影音直播和完整赛事的页面 (此功能会在联盟网页提供完整英文支持之后取消)
 
 ### v1.0.0 04/14/2020
 

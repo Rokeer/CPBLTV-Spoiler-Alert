@@ -34,5 +34,20 @@
   },
   "support_button": {
     "message": "<i class=\"fas fa-microphone-alt\"></i> 點此收聽踏浪尋星廣播電台"
+  },
+  "trans_select": {
+    "message": "將頁面翻譯為英文?"
+  },
+  "mode_on": {
+    "message": "翻譯"
+  },
+  "mode_off": {
+    "message": "不翻譯"
+  },
+  "mode_trans_desc": {
+    "message": "請幫我翻譯為英文!"
+  },
+  "mode_no_trans_desc": {
+    "message": "請不要幫我翻譯頁面."
   }
 }

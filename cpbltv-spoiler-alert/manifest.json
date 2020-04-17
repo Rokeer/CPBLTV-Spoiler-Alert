@@ -2,7 +2,7 @@
   "manifest_version": 2,
  
   "name": "CPBLTV Spoiler Alert",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "__MSG_description__",
   "icons": {
     "16": "icons/icon16.png",
@@ -15,10 +15,12 @@
       "storage.js"
     ]
   },
-  "content_scripts": [{
-    "css": ["styles.css"],
-    "matches": ["https://www.cpbltv.com/lists.php*"]
-  }],
+  "content_scripts": [
+    {
+      "css": ["styles.css"],
+      "matches": ["https://www.cpbltv.com/*"]
+    }
+  ],
   "permissions": [
     "storage",
     "tabs",

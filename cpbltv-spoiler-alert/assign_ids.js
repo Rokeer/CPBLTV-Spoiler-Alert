@@ -1,23 +1,25 @@
-window.onload=function(){
+function assign_ids() {
 	var scores = document.getElementsByClassName("score");
 	for (var i = 0; i < scores.length; i++) {
 		var score = scores.item(i);
 		score.id = "score_" + i;
 	}
 
-	var tbl = document.getElementsByClassName('vod_table'), // table reference
-	tbl = tbl.item(0);
+	var tbl = document.getElementsByClassName('vod_table'); // table reference
+	if (tbl.length > 0) {
+		tbl = tbl.item(0);
 
-	for (var i = 0; i < tbl.rows.length; i++) {
-		var row = tbl.rows[i];
-		if (i == 0) {
-			var th = document.createElement('th');
-			th.innerHTML = "显示/隐藏分数<br><label class=\"switch\"><input id=\"switch_all\" type=\"checkbox\"><span class=\"slider round\"></span></label>";
-			row.appendChild(th);
-			var toggle = document.getElementById("switch_all");
-			toggle.onclick = function(){toggleAll()};
-		} else {
-			createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), i-1, 'stadium');
+		for (var i = 0; i < tbl.rows.length; i++) {
+			var row = tbl.rows[i];
+			if (i == 0) {
+				var th = document.createElement('th');
+				th.innerHTML = "<div class=\"shscores\">顯示/隱藏分數</div><label class=\"switch\"><input id=\"switch_all\" type=\"checkbox\"><span class=\"slider round\"></span></label>";
+				row.appendChild(th);
+				var toggle = document.getElementById("switch_all");
+				toggle.onclick = function(){toggleAll()};
+			} else {
+				createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), i-1, 'stadium');
+			}
 		}
 	}
 }
