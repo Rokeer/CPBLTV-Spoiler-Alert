@@ -32,48 +32,47 @@ unblock_youku.backup_proxy_server_addr = '127.0.0.1:1086';
 var cpbl_sa = cpbl_sa || {};
 
 // ====== Configuration Functions ======
-function set_mode_name(mode_name, callback) {
+function set_mode_name(mode, mode_name, callback) { // mode: cpbltv_spoiler_alert_mode
     if (typeof callback === 'undefined') {
         var err_msg = 'missing callback function in set_mode_name()';
         console.error(err_msg);
     }
 
-    set_storage('cpbltv_spoiler_alert_mode', mode_name, callback);
+    set_storage(mode, mode_name, callback);
 }
 
-function get_mode_name(callback) {
+function get_mode_name(mode, callback) {
     if (typeof callback === 'undefined') {
         var err_msg = 'missing callback function in get_mode_name()';
         console.error(err_msg);
     }
 
-    get_storage('cpbltv_spoiler_alert_mode', function(current_mode) {
-        if (typeof current_mode === 'undefined' || (
-                current_mode !== 'show' )) {
-            set_mode_name('hide', function() {
-                callback('hide');
-            });
-        } else {
-            callback(current_mode);
-        }
-    });
-}
-
-function clear_mode_settings(mode_name) {
-    switch (mode_name) {
-    case 'show':
-        console.log('cleared settings for show');
-        break;
-    case 'hide':
-        console.log('cleared settings for hide');
-        break;
-    default:
-        var err_msg = 'clear_mode_settings: should never come here';
-        console.error(err_msg);
-        break;
+    if ('cpbltv_spoiler_alert_mode' == mode){
+        get_storage('cpbltv_spoiler_alert_mode', function(current_mode) {
+            if (typeof current_mode === 'undefined' || (
+                    current_mode !== 'show' )) {
+                set_mode_name(mode, 'hide', function() {
+                    callback('hide');
+                });
+            } else {
+                callback(current_mode);
+            }
+        });
     }
 
-    console.log('cleared the settings for the mode: ' + mode_name);
+    if ('cpbltv_translation' == mode){
+        get_storage('cpbltv_translation', function(current_mode) {
+            if (typeof current_mode === 'undefined' || (
+                    current_mode !== 'on' )) {
+                set_mode_name(mode, 'off', function() {
+                    callback('off');
+                });
+            } else {
+                callback(current_mode);
+            }
+        });
+    }
+    
 }
 
 function setup_mode_settings(mode_name) {
@@ -96,8 +95,8 @@ function setup_mode_settings(mode_name) {
     console.log('initialized the settings for the mode: ' + mode_name);
 }
 
-function change_mode(new_mode_name) {
-    set_mode_name(new_mode_name, function() {});
+function change_mode(mode, new_mode_name) {
+    set_mode_name(mode, new_mode_name, function() {});
     // the storage change listener would take care about the setting changes
 }
 
@@ -134,10 +133,11 @@ function storage_monitor(changes, area) {
 
         // doesn't run if it's first time to migrate the old settings
         if (typeof mode_change.oldValue !== 'undefined' && typeof mode_change.newValue !== 'undefined') {
-            clear_mode_settings(mode_change.oldValue);
             setup_mode_settings(mode_change.newValue);
         }
     }
+
+    
 }
 
 
@@ -157,20 +157,36 @@ document.addEventListener("DOMContentLoaded", function() {
     setup_storage_monitor();
     cpbl_sa.version = chrome.runtime.getManifest().version;
 
-    get_mode_name(function(current_mode_name) {
+    get_mode_name('cpbltv_spoiler_alert_mode', function(current_mode_name) {
         setup_mode_settings(current_mode_name);
     });
+
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    if(!tab.url.match(/^https:\/\/www.cpbltv.com\/lists.php*/)) { return; } // Wrong scheme
-    get_mode_name(function(current_mode_name) {
+    if(!tab.url.match(/^https:\/\/www.cpbltv.com\/*/)) { return; } // Wrong scheme
+    get_mode_name('cpbltv_spoiler_alert_mode', function(current_mode_name) {
     	console.log('current_mode_name: ' + current_mode_name);
         if ("hide" == current_mode_name) {
             chrome.tabs.insertCSS(null,{file:'styles.css'});
             chrome.tabs.executeScript(null,{file:'assign_ids.js'});
         } else {
             chrome.tabs.insertCSS(null,{file:'showstyles.css'});
+            chrome.tabs.executeScript(null,{file:'dump_assign_ids.js'});
         }
+        //
     });
+
+    get_mode_name('cpbltv_translation', function(current_mode_name) {
+        console.log('current_mode_name: ' + current_mode_name);
+        if ("on" == current_mode_name) {
+            chrome.tabs.executeScript(null,{file:'tanslate_en.js'});
+        } else {
+            chrome.tabs.executeScript(null,{file:'dump_translate_en.js'});
+        }
+        //
+    });
+
+
+    chrome.tabs.executeScript(null,{file:'change_content.js'});
 }); 

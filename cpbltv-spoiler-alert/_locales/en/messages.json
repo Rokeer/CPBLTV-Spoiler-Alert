@@ -34,5 +34,20 @@
   },
   "support_button": {
     "message": "<i class=\"fas fa-microphone-alt\"></i> Listen to the TasRadio"
+  },
+  "trans_select": {
+    "message": "Translate to English?"
+  },
+  "mode_on": {
+    "message": "Yes"
+  },
+  "mode_off": {
+    "message": "No"
+  },
+  "mode_trans_desc": {
+    "message": "Translate to English!"
+  },
+  "mode_no_trans_desc": {
+    "message": "Don't Translate to English."
   }
 }

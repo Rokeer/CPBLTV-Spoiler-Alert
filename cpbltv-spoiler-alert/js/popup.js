@@ -35,6 +35,14 @@ function set_i18n_text() {
     //$('div#help_text').html(get_msg('help'));
     $('div#faq').html(get_msg('faq'));
     $('div#rating').html(get_msg('rating'));
+
+    // Translation start
+    $('div#trans_select strong').html(get_msg('trans_select'));
+
+    $('span.mode_on').html(get_msg('mode_on'));
+    $('span.mode_trans_desc').html(get_msg('mode_trans_desc'));
+    $('span.mode_off').html(get_msg('mode_off'));
+    $('span.mode_no_trans_desc').html(get_msg('mode_no_trans_desc'));
 }
 
 $(document).ready(function() {
@@ -44,7 +52,7 @@ $(document).ready(function() {
     var background = chrome.extension.getBackgroundPage();
 
     // set default button display
-    background.get_mode_name(function(current_mode_name) {
+    background.get_mode_name('cpbltv_spoiler_alert_mode', function(current_mode_name) {
         switch (current_mode_name) {
             case 'show':
                 $('label#show').addClass('active');
@@ -55,18 +63,40 @@ $(document).ready(function() {
         }
     });
 
+    background.get_mode_name('cpbltv_translation', function(current_mode_name) {
+        switch (current_mode_name) {
+            case 'on':
+                $('label#trans').addClass('active');
+                break;
+            default:
+                $('label#no_trans').addClass('active');
+                break;
+        }
+    });
+
     $('div#version small').html('CPBLTV Spoiler Alert v' + background.cpbl_sa.version);
 
     // button actions
     $('input#input_hide').change(function() {
         console.log('to change mode to hide');
-        background.change_mode('hide');
+        background.change_mode('cpbltv_spoiler_alert_mode', 'hide');
 
 
     });
     $('input#input_show').change(function() {
         console.log('to change mode to show');
-        background.change_mode('show');
+        background.change_mode('cpbltv_spoiler_alert_mode', 'show');
+    });
+
+    $('input#input_trans').change(function() {
+        console.log('to change translation mode to on');
+        background.change_mode('cpbltv_translation', 'on');
+
+
+    });
+    $('input#input_no_trans').change(function() {
+        console.log('to change translation mode to off');
+        background.change_mode('cpbltv_translation', 'off');
     });
 
     // enable tooltip
