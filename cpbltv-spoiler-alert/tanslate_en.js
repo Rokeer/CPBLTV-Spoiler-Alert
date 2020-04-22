@@ -17,11 +17,13 @@ function translate_en() {
 	}
 
 	status_ori_text = [
-		"尚未開戰"
+		"尚未開戰",
+		"比賽結束"
 	]
 
 	status_rep_text = [
-		"Not started"
+		"Not started",
+		"Game End"
 	]
 
 	replaceText("now blue", status_ori_text, status_rep_text);
